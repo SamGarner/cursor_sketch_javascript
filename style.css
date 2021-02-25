@@ -1,0 +1,44 @@
+/*.sketch-pad {
+  flex:  1 1;
+  background-color: blue;
+}
+*/
+/*.grid-cell {
+  border: 1px solid #ddd;
+}*/
+
+/* root for limiting wrapper square size */
+:root {
+    --content-width: 400px;
+}
+
+body {
+    display: flex; /* flex container */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* flex container & viewport height  */
+}
+
+/* Pixel Container */
+.sketch-pad {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.sketch-pad-wrapper {
+    height: 75vw;
+    width: 75vw;
+    max-height: var(--content-width); /* root - 400px */
+    max-width: var(--content-width);  /* root - 400px */
+    margin: 30px auto;
+    position: relative;
+}
+
+.sketch-pad > * {
+  height: 100%;
+  /*background-color: #fff6eb;*/
+  background-color: #e6eaf0;
+}*/
