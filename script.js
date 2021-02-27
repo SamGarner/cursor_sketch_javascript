@@ -1,10 +1,5 @@
 const sketchPad = document.querySelector(".sketch-pad");
 
-// let gridCell = document.createElement(".div");
-// gridCell.setAttribute('class', '.grid-cell')
-
-// sketchPad.appendChild(gridCell)
-
 let generateGrid = gridWidth => { // not function
   let gridArea = gridWidth * gridWidth;
   // 1fr and 100fr produce the same thing since it's the ratio between them that matters
@@ -17,6 +12,22 @@ let generateGrid = gridWidth => { // not function
     // sketchPad.style.gridTemplateRows = `repeat(${gridWidth}, 1fr)`;
     sketchPad.insertAdjacentElement('beforeend', gridCell);
   }
+  
+  addGridCellEventListeners();
+}
+
+let addGridCellEventListeners = () => {
+  let gridCells = sketchPad.querySelectorAll('div');
+  gridCells.forEach(gridCell => gridCell.addEventListener('mouseover', colorCell));
+}
+
+// let colorCell = () => {
+//   // this.style.backgroundColor = 'blue';
+//   this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+// }
+
+function colorCell() {  // DOES NOT WORK WITH ARROW NOTATION: undefined 'this'
+  this.style.backgroundColor = 'blue' // `hsl(${Math.random() * 360}, 100%, 50%)`;
 }
 
 generateGrid(16);
