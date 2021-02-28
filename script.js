@@ -30,4 +30,4 @@ function colorCell() {  // DOES NOT WORK WITH ARROW NOTATION: undefined 'this'
   this.style.backgroundColor = 'blue' // `hsl(${Math.random() * 360}, 100%, 50%)`;
 }
 
-generateGrid(16);
+generateGrid(100);
