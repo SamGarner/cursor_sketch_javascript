@@ -1,4 +1,5 @@
 const sketchPad = document.querySelector(".sketch-pad");
+const resetButton = document.querySelector('.reset-button');
 
 let generateGrid = gridWidth => { // not function
   let gridArea = gridWidth * gridWidth;
@@ -21,6 +22,11 @@ let addGridCellEventListeners = () => {
   gridCells.forEach(gridCell => gridCell.addEventListener('mouseover', colorCell));
 }
 
+let resetGrid = () => {
+  let gridCells = sketchPad.querySelectorAll('div');
+  gridCells.forEach(gridCell => gridCell.style.backgroundColor = '#e6eaf0'); //style
+}
+
 // let colorCell = () => {
 //   // this.style.backgroundColor = 'blue';
 //   this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
@@ -31,3 +37,4 @@ function colorCell() {  // DOES NOT WORK WITH ARROW NOTATION: undefined 'this'
 }
 
 generateGrid(100);
+resetButton.addEventListener('click', resetGrid); // no () on resetGrid
