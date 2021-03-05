@@ -24,7 +24,10 @@ let addGridCellEventListeners = () => {
 
 let resetGrid = () => {
   let gridCells = sketchPad.querySelectorAll('div');
-  gridCells.forEach(gridCell => gridCell.style.backgroundColor = '#e6eaf0'); //style
+  gridCells.forEach(gridCell => {
+    gridCell.style.backgroundColor = '#e6eaf0';
+    gridCell.style.borderStyle = 'solid'; //style
+  });
 }
 
 // let colorCell = () => {
@@ -33,8 +36,9 @@ let resetGrid = () => {
 // }
 
 function colorCell() {  // DOES NOT WORK WITH ARROW NOTATION: undefined 'this'
-  this.style.backgroundColor = 'blue' // `hsl(${Math.random() * 360}, 100%, 50%)`;
+  this.style.backgroundColor = 'blue'; // `hsl(${Math.random() * 360}, 100%, 50%)`;
+  this.style.borderStyle = 'none';
 }
 
-generateGrid(100);
+generateGrid(30);
 resetButton.addEventListener('click', resetGrid); // no () on resetGrid
